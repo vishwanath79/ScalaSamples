@@ -21,3 +21,11 @@ object ChecksumAccumulator {
 
 
 ChecksumAccumulator.calculate("Every value is an object")
+
+
+def updateRecordByName(r: Symbol, value: Any) = {
+
+
+}
+
+updateRecordByName(Symbol,Any)
