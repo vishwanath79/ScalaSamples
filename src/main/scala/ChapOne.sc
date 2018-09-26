@@ -21,4 +21,20 @@ def withStopWordsFiltered(rdd: RDD[String], illegalTokens: Array[Char], stopWord
 }
 
 
+def simpleSparkProgram(rdd: RDD[Double]): Long = {
+  //stage1
+  rdd.filter(_<1000.0)
+    .map(x => (x,x))
+  //stage2
+    .groupByKey()
+    .map{ case (value,groups) => (groups.sum,value)}
+  //stage3
+    .sortByKey()
+    .count()
+
+
+}
+
+
+
 
